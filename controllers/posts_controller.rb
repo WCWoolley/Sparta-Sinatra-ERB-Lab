@@ -67,7 +67,7 @@ class PostsController < Sinatra::Base
       :body => params[:body]
     }
 
-    $psots.push new_post
+    $posts.push new_post
 
     redirect '/'
 
