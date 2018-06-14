@@ -2,12 +2,12 @@
 
   <div>
     <label>Title</label>
-    <input type="text" name="title" placeholder="Enter a title for your post.." value="<%= @post[:title] %>">
+    <input type="text" name="title" value="<%= @post[:title] %>">
   </div>
 
   <div>
     <label>Description</label>
-    <textarea name="body" rows="8" cols="40" placeholder="Enter a description for your post.."><%= @post[:body] %></textarea>
+    <textarea name="body" rows="8" cols="40"><%= @post[:body] %></textarea>
   </div>
 
   <input type="submit" value="submit">

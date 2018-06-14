@@ -26,6 +26,7 @@ class PostsController < Sinatra::Base
     }
   ]
 
+  # INDEX
   get '/posts' do
 
     @title = "Posts Index"
@@ -35,6 +36,7 @@ class PostsController < Sinatra::Base
 
   end
 
+  # NEW
   get '/posts/new' do
 
     @title = "New Post"
@@ -48,6 +50,7 @@ class PostsController < Sinatra::Base
 
   end
 
+  # SHOW
   get '/posts/:id' do
 
     id = params[:id].to_i
@@ -59,6 +62,7 @@ class PostsController < Sinatra::Base
 
   end
 
+  # CREATE
   post '/posts' do
 
     new_post = {
@@ -73,6 +77,7 @@ class PostsController < Sinatra::Base
 
   end
 
+  # UPDATE
   put '/posts/:id' do
 
     id = params[:id].to_i
@@ -88,6 +93,7 @@ class PostsController < Sinatra::Base
 
   end
 
+  # EDIT
   get '/posts/:id/edit' do
 
     id = params[:id].to_i
@@ -99,6 +105,7 @@ class PostsController < Sinatra::Base
 
   end
 
+  # DESTORY
   delete '/posts/:id' do
 
     id = params[:id].to_i
