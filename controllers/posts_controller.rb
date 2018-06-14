@@ -26,7 +26,7 @@ class PostsController < Sinatra::Base
     }
   ]
 
-  get '/' do
+  get '/posts' do
 
     @title = "Posts Index"
     @posts = $posts
@@ -35,7 +35,7 @@ class PostsController < Sinatra::Base
 
   end
 
-  get '/new' do
+  get '/posts/new' do
 
     @title = "New Post"
     @post = {
@@ -48,7 +48,7 @@ class PostsController < Sinatra::Base
 
   end
 
-  get '/:id' do
+  get '/posts/:id' do
 
     id = params[:id].to_i
 
@@ -59,7 +59,7 @@ class PostsController < Sinatra::Base
 
   end
 
-  post '/' do
+  post '/posts' do
 
     new_post = {
       :id => $posts.last[:id] + 1,
@@ -69,11 +69,11 @@ class PostsController < Sinatra::Base
 
     $posts.push new_post
 
-    redirect '/'
+    redirect '/posts'
 
   end
 
-  put '/:id' do
+  put '/posts/:id' do
 
     id = params[:id].to_i
 
@@ -84,11 +84,11 @@ class PostsController < Sinatra::Base
 
     $posts[id] = post
 
-    redirect '/'
+    redirect '/posts'
 
   end
 
-  get '/:id/edit' do
+  get '/posts/:id/edit' do
 
     id = params[:id].to_i
 
@@ -99,13 +99,13 @@ class PostsController < Sinatra::Base
 
   end
 
-  delete '/:id' do
+  delete '/posts/:id' do
 
     id = params[:id].to_i
 
     $posts.delete_at id
 
-    redirect '/'
+    redirect '/posts'
 
   end
 end
